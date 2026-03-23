@@ -5,7 +5,7 @@
 - GitHub: [@johnbuay](https://github.com/johnbuay)
 
 ## Repository Name
-iyf-s10-week-04-Kimiti4
+s10-wk4-js-fundumentals
 
 ## Project Description
 This project contains my Week 4 JavaScript practice work. It covers JavaScript basics such as variables, data types, operators, functions, control flow, arrays, objects, and arrays of objects.
@@ -15,13 +15,16 @@ It also includes two mini-projects:
 - Student Grade Tracker
 
 ## Files
-- `index.html` - main HTML file
-- `calculator.js/exercises.js/gradeTracker.js` - JavaScript practice and mini-projects
+#### Html main file
+- `index.html` 
+ #### JavaScript practice and mini-projects
+- `calculator.js`
+- `exercises.js`
+- `gradeTracker.js` - JavaScript practice and mini-projects
 
 ## Concepts Covered
-- Variables (`let`, `const`)
+- Variables
 - Data types
-- Operators
 - Loops
 - Arrays and array methods
 - Objects
