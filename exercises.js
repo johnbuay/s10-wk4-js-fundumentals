@@ -249,65 +249,6 @@ for (let t = 1; t <= 5; t++){
     console.log("*".repeat(t));
 }
 
-// CALCULATOR
-
-function addNumbers(a, b) {
-  return a + b;
-}
-
-function subtract(a, b) {
-  return a - b;
-}
-
-function multiplyNumbers(a, b) {
-  return a * b;
-}
-
-function divideNumbers(a, b) {
-  if (b === 0) {
-    return "Error: Cannot divide by zero";
-  }
-  return a / b;
-}
-
-function modulus(a, b) {
-  if (b === 0) {
-    return "Error: Cannot divide by zero";
-  }
-  return a % b;
-}
-
-function power(a, b) {
-  return a ** b;
-}
-
-function calculate(num1, operator, num2) {
-  switch (operator) {
-    case "+":
-      return addNumbers(num1, num2);
-    case "-":
-      return subtract(num1, num2);
-    case "*":
-      return multiplyNumbers(num1, num2);
-    case "/":
-      return divideNumbers(num1, num2);
-    case "%":
-      return modulus(num1, num2);
-    case "**":
-      return power(num1, num2);
-    default:
-      return "Invalid operator";
-  }
-}
-
-console.log(calculate(10, "+", 5));
-console.log(calculate(10, "-", 5));
-console.log(calculate(10, "*", 5));
-console.log(calculate(10, "/", 5));
-console.log(calculate(10, "/", 0));
-console.log(calculate(10, "%", 3));
-console.log(calculate(2, "**", 4));
-
 //TASK 8.1: ARRAYS
 
 
@@ -402,9 +343,6 @@ for (const [subject, score] of Object.entries(scores)) {
   console.log(`${subject}: ${score}`);
 }
 
-//TASK 8.3
-
-
 const students = [
   { name: "James", age: 22, grade: 85, major: "CS" },
   { name: "Bobby", age: 20, grade: 72, major: "Math" },
@@ -432,101 +370,5 @@ console.log("Sorted by grade:", sortedByGrade);
 console.log("Any student > 90?", hasTopStudent);
 console.log("All passing?", allPassing);
 
-// MINI PROJECT: GRADE TRACKER
 
 
-const gradeTracker = {
-  students: [],
-
-  addStudent(name, grades) {
-    this.students.push({ name, grades });
-  },
-
-  getStudent(name) {
-    return this.students.find(student => student.name === name) || null;
-  },
-
-  getStudentAverage(name) {
-    const student = this.getStudent(name);
-    if (!student) return null;
-
-    const values = Object.values(student.grades);
-    const total = values.reduce((sum, grade) => sum + grade, 0);
-    return Number((total / values.length).toFixed(2));
-  },
-
-  getSubjectAverage(subject) {
-    let total = 0;
-    let count = 0;
-
-    for (const student of this.students) {
-      if (student.grades[subject] !== undefined) {
-        total += student.grades[subject];
-        count++;
-      }
-    }
-
-    if (count === 0) return null;
-    return Number((total / count).toFixed(2));
-  },
-
-  getTopStudent() {
-    if (this.students.length === 0) return null;
-
-    let topStudent = this.students[0];
-    let topAverage = this.getStudentAverage(topStudent.name);
-
-    for (const student of this.students) {
-      const avg = this.getStudentAverage(student.name);
-      if (avg > topAverage) {
-        topAverage = avg;
-        topStudent = student;
-      }
-    }
-
-    return {
-      name: topStudent.name,
-      average: topAverage
-    };
-  },
-
-  getStrugglingStudents() {
-    return this.students.filter(student => this.getStudentAverage(student.name) < 70);
-  },
-
-  getLetterGrade(score) {
-    if (score >= 90) return "A";
-    if (score >= 80) return "B";
-    if (score >= 70) return "C";
-    if (score >= 60) return "D";
-    return "F";
-  },
-
-  generateReportCard(name) {
-    const student = this.getStudent(name);
-    if (!student) return "Student not found";
-
-    let report = `Report Card for ${student.name}\n`;
-    report += "----------------------\n";
-
-    for (const [subject, grade] of Object.entries(student.grades)) {
-      report += `${subject}: ${grade} (${this.getLetterGrade(grade)})\n`;
-    }
-
-    const average = this.getStudentAverage(name);
-    report += `Average: ${average}\n`;
-    report += `Overall Grade: ${this.getLetterGrade(average)}`;
-
-    return report;
-  }
-};
-
-gradeTracker.addStudent("James", { math: 95, english: 88, science: 92 });
-gradeTracker.addStudent("Bobby", { math: 72, english: 85, science: 78 });
-gradeTracker.addStudent("Charlie", { math: 60, english: 65, science: 58 });
-
-console.log("James average:", gradeTracker.getStudentAverage("James"));
-console.log("Math average:", gradeTracker.getSubjectAverage("math"));
-console.log("Top student:", gradeTracker.getTopStudent());
-console.log("Struggling students:", gradeTracker.getStrugglingStudents());
-console.log(gradeTracker.generateReportCard("James"));
