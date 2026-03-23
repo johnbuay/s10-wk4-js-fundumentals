@@ -20,7 +20,7 @@ It also includes two mini-projects:
  #### JavaScript practice and mini-projects
 - `calculator.js`
 - `exercises.js`
-- `gradeTracker.js` - JavaScript practice and mini-projects
+- `gradeTracker.js`
 
 ## Concepts Covered
 - Variables
@@ -37,7 +37,7 @@ It also includes two mini-projects:
 ### 1. Calculator
 ### 2. Student Grade Tracker
 
-##  Run This Repo 
+## How to run this repo
 1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/s10-wk4-js-fundumentals/yourusername.git
