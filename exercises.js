@@ -1,6 +1,6 @@
 let name= "Your Name";
-let age= 25;
-const birthYear= 1998;
+let age= 22;
+const birthYear= 2004;
 
 //typeof operator
 console.log(typeof name); // Output: string
@@ -17,7 +17,7 @@ let score = 100;
 
 //Exercise
 let fullName = "John Buay";
-let myAge = 29;
+let myAge = 22;
 let isStudent = true;
 let favoriteColor = ["Blue", "Purple", "Black"];
 let dateToday = new Date();
